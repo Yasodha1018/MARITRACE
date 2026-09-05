@@ -1,11 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.v1 import detection, drift, ais, attribution, report
-from app.core.database import engine
-from app.models.incident import Base
-
-# Create tables (in production use migrations)
-Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Maritrace API", version="1.0")
 
